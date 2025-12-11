@@ -1,9 +1,12 @@
 # BrightendFramework
+
 A unity framework based on SpringBoot backend and Addressable + HybridCLR hot updates.  
 Some features may not be very comprehensive, but this is a good start.  
+Part of the code is only for learning purposes and is not suitable for actual deployment.  
 
-  
+
 # Unity Path Defines and Utility Describe  
+
 Assets  
 ├─AddressableAssetsData  
 │  ...  
@@ -87,8 +90,9 @@ Assets
       OPPOSANS-R SDF.asset  
       OPPOSANS-R.TTF  
       ...  
-  
+
 # SpringBoot Path Defines and Utility Describe  
+
 BrightendRoot  
 ├─ProjectBackend  
 │  │  test_post.http	// All the backend APIs here, using IDEA or Rider to open this and test APIs.  
