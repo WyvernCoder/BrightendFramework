@@ -72,14 +72,14 @@ public class DictEditorWindow : EditorWindow
     {
         var body = JArray.Parse(
             @"[{""dictLabel"":""DEF"",""dictValue"":""#DEF"",""dictType"":""language"",""dictLanguage"":""zh"",""status"":""0"",""createBy"":""unity_editor""},{""dictLabel"":""DEF"",""dictValue"":""#DEF"",""dictType"":""language"",""dictLanguage"":""en"",""status"":""0"",""createBy"":""unity_editor""}]");
-        body[0]["dictLabel"] = value[0];
-        body[0]["dictValue"] = key;
-        body[0]["dictLanguage"] = language[0];
-        body[0]["createBy"] = updater;
-        body[1]["dictLabel"] = value[1];
-        body[1]["dictValue"] = key;
-        body[1]["dictLanguage"] = language[1];
-        body[1]["createBy"] = updater;
+        body[0]["dict_label"] = value[0];
+        body[0]["dict_value"] = key;
+        body[0]["dict_language"] = language[0];
+        body[0]["create_by"] = updater;
+        body[1]["dict_label"] = value[1];
+        body[1]["dict_value"] = key;
+        body[1]["dict_language"] = language[1];
+        body[1]["create_by"] = updater;
 
         await SendRequestEditor("v1/dict/add", Brightend.RequestType.POST, body.ToString());
     }
