@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DLC_TestScene
+  m_EditorClassIdentifier: 
+  m_GroupName: DLC_TestScene
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e9ebc6bd4c2562a46abd4537c39ca952
+  m_SerializeEntries:
+  - m_GUID: 42a8c93f347bd0248b0614ce41c6b81a
+    m_Address: DLC_TestScene/DLC_TestScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e2f705c8db4edc408bbe6ac6e2a3e9e
+    m_Address: DLC_TestScene/DLC_TestScene.dll.bytes
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 802c8663e41bf524aa61ba9a9722165b
+    m_Address: DLC_TestScene/DLC_TestScene.pdb.bytes
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 375f2fce7702fda4cabdf2c7421a53bf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 82352057283e3f94c80d1fb30a1147bf, type: 2}
+    - {fileID: 11400000, guid: 78f4e3c1e54cb4a478a5e3af6bb0c0ea, type: 2}

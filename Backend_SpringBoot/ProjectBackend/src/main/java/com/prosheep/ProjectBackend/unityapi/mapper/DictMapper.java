@@ -1,0 +1,9 @@
+package com.prosheep.ProjectBackend.unityapi.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.prosheep.ProjectBackend.unityapi.entity.Dict;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface DictMapper extends BaseMapper<Dict> {
+}

@@ -1,0 +1,260 @@
+### Login (validate username & password)
+POST http://localhost:8080/v1/user/validate
+Content-Type: application/x-www-form-urlencoded
+
+username=test_user&password=pass
+
+### Get all users (admin use case)
+GET http://localhost:8080/v1/user
+
+### --- UserController Tests ---
+
+### Login with valid credentials
+POST http://localhost:8080/v1/user/login
+Content-Type: application/x-www-form-urlencoded
+
+username=test_user&password=pass
+
+### Get all users (admin use case)
+GET http://localhost:8080/v1/user
+
+
+### --- UserDataController Tests ---
+
+### Login with existing user
+POST http://localhost:8080/v1/user/login
+Content-Type: application/x-www-form-urlencoded
+
+username=test_user&password=pass
+
+### Get all user data
+GET http://localhost:8080/v1/userdata
+
+### Get user data by ID
+GET http://localhost:8080/v1/userdata/id/1
+
+### Create new user data
+POST http://localhost:8080/v1/userdata
+Content-Type: application/json
+
+{
+  "username": "test_post",
+  "password": "pass",
+  "unlockStatus": "{}",
+  "deptid": 0,
+  "createBy": "Rider",
+  "updateBy": "Rider"
+}
+
+### Update user data by ID
+PUT http://localhost:8080/v1/userdata/id/1
+Content-Type: application/json
+
+{
+  "unlockStatus": "{}",
+  "deptid": 0,
+  "updateBy": "Rider_new"
+}
+
+### Delete user data by ID
+DELETE http://localhost:8080/v1/userdata/id/1
+
+### Get user data by username
+GET http://localhost:8080/v1/userdata/username/test_post
+
+### Update user data by username
+PUT http://localhost:8080/v1/userdata/username/test_post
+Content-Type: application/json
+
+{
+  "unlockStatus": "{}",
+  "deptid": 0,
+  "updateBy": "rider_new"
+}
+
+### Delete user data by username
+DELETE http://localhost:8080/v1/userdata/username/test_post
+
+
+
+
+
+
+
+
+### --- LevelController Tests ---
+
+### Get all levels
+GET http://localhost:8080/v1/levels
+
+### Get level by UID
+GET http://localhost:8080/v1/levels/uid/66666666666666666666666666666666
+
+### Create new level
+POST http://localhost:8080/v1/levels
+Content-Type: application/json
+
+{
+  "uid": "66666666666666666666666666666666",
+  "cover": "gameassets/covers/test_post.png",
+  "json": "{}",
+  "label": "test post",
+  "describe": "test post desc",
+  "categoryId": 0,
+  "defaultUnlock": 0,
+  "maxStars": 3,
+  "createBy": "Rider",
+  "updateBy": "Rider"
+}
+
+### Update level by UID
+PUT http://localhost:8080/v1/levels/uid/66666666666666666666666666666666
+Content-Type: application/json
+
+{
+  "cover": "gameassets/covers/test_post.png",
+  "json": "{}",
+  "label": "test post Updated",
+  "describe": "Updated test post desc",
+  "categoryId": 0,
+  "defaultUnlock": 0,
+  "maxStars": 5,
+  "updateBy": "Rider_new"
+}
+
+### Delete level by UID
+DELETE http://localhost:8080/v1/levels/uid/66666666666666666666666666666666
+
+
+### Add new user
+POST http://localhost:8080/v1/user/add
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "test_user_abc",
+  "nickname": "Test User ABC",
+  "usertype": 0,
+  "deptid": null,
+  "phonenumber": "1234567890",
+  "sex": 0,
+  "avatar": "useruploads/avatars/test_user_abc.png",
+  "password": "pass",
+  "status": 0,
+  "delFlag": 0,
+  "loginIp": "127.0.0.1",
+  "loginDate": "2025-12-07T15:49:00",
+  "createBy": "Rider",
+  "createTime": "2025-12-07T15:49:00",
+  "updateBy": "Rider",
+  "updateTime": "2025-12-07T15:49:00",
+  "remark": "Test user"
+}
+
+###
+
+### Update user by username
+PUT http://localhost:8080/v1/user/update
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "test_user_abc",
+  "nickname": "Updated Test User ABC",
+  "updateBy": "Rider_New",
+  "updateTime": "2025-12-07T15:49:00"
+}
+
+###
+
+### Delete user by username
+DELETE http://localhost:8080/v1/user/delete/test_user_abc
+Accept: application/json
+
+
+
+### Get all language dict entries (Chinese)
+GET http://localhost:8080/v1/dict/language/zh
+Accept: application/json
+
+###
+
+### Get all language dict entries (English)
+GET http://localhost:8080/v1/dict/language/en
+Accept: application/json
+
+
+### Add Dict
+POST http://localhost:8080/v1/dict/add
+Content-Type: application/json
+
+[
+  {
+    "dictLabel": "注册",
+    "dictValue": "#SIGNUP",
+    "dictType": "language",
+    "dictLanguage": "zh",
+    "status": "0",
+    "createBy": "wyvernlang"
+  },
+  {
+    "dictLabel": "Signup",
+    "dictValue": "#SIGNUP",
+    "dictType": "language",
+    "dictLanguage": "en",
+    "status": "0",
+    "createBy": "wyvernlang"
+  }
+]
+
+###
+
+### Update Dict by dict_value, dict_language, dict_type
+PUT http://localhost:8080/v1/dict/update
+Content-Type: application/json
+
+[
+  {
+    "dictLabel": "今日公告",
+    "dictValue": "#MOTD_TITLE",
+    "dictType": "language",
+    "dictLanguage": "zh",
+    "updateBy": "wyvern"
+  },
+  {
+    "dictLabel": "Today Notice",
+    "dictValue": "#MOTD_TITLE",
+    "dictType": "language",
+    "dictLanguage": "en",
+    "updateBy": "wyvern"
+  }
+]
+
+### Download a DLC file
+GET http://localhost:8080/v1/files/download_gameassets/dlcs/example.bundle
+Accept: application/octet-stream
+
+### Batch upload DLC bundles
+POST http://localhost:8080/v1/files/upload_gameassets/dlcs/
+Content-Type: multipart/form-data
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="dlc1.bundle"
+Content-Type: application/octet-stream
+
+< ./testfiles/dlc1.bundle
+--boundary
+Content-Disposition: form-data; name="files"; filename="dlc2.bundle"
+Content-Type: application/octet-stream
+
+< ./testfiles/dlc2.bundle
+--boundary--
+
+### Batch delete DLC bundles
+DELETE http://localhost:8080/v1/files/delete_gameassets/dlcs/
+Content-Type: application/json
+
+[
+  "dlc1.bundle",
+  "dlc2.bundle"
+]
